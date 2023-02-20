@@ -13,8 +13,12 @@ read str2
 #環境変数にURLを渡してnode実行、スクリーンショットを生成する
 ORIGINAL="${str}" COMPARE="${str2}" node ./tasks/diff.mjs
 
+echo compare...
+
 #画像比較を実行 PC用
-compare $(cd $(dirname $0);pwd)/images/a.png $(cd $(dirname $0);pwd)/images/b.png $(cd $(dirname $0);pwd)/images/pc.png
+compare $(cd $(dirname $0);pwd)/images/original.png $(cd $(dirname $0);pwd)/images/compare.png $(cd $(dirname $0);pwd)/images/diff_pc.png
 
 #画像比較を実行 SP用
-compare $(cd $(dirname $0);pwd)/images/a_sp.png $(cd $(dirname $0);pwd)/images/b_sp.png $(cd $(dirname $0);pwd)/images/sp.png
+compare $(cd $(dirname $0);pwd)/images/original_sp.png $(cd $(dirname $0);pwd)/images/compare_sp.png $(cd $(dirname $0);pwd)/images/diff_sp.png
+
+echo Finished!!! Plese Check 'images' directory!

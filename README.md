@@ -45,7 +45,7 @@ cd /PATH/TO/webPageDiff
 ### 2. コマンド実行
 
 ```
-diff
+./diff
 ```
 
 コマンドプロンプトの入力インターフェースに比較したいページの URL を入力して Enter
@@ -54,9 +54,12 @@ ORIGINAL と COMPARE の 2 回入力する
 
 ### 3. 自動生成
 
-images/ ディレクトリにスクリーンショットが保存される。その後、比較結果 `diff.png` が生成される。
+images/ ディレクトリにスクリーンショットが保存される。その後、比較結果が生成される。
 
-`diff.png` の赤色になっている部分が差分である。
+- `diff_pc.png` ・・・PC 版の差分抽出
+- `diff_sp.png` ・・・SP 版の差分抽出
+
+画像内の赤色になっている部分が差分である。
 
 ## 開発環境の参考
 
@@ -76,7 +79,8 @@ webPageDiff/
   │    ├─ original_sp.png・・・元になるページのSP版スクリーンショット
   │    ├─ compare.png・・・比較ページのSP版スクリーンショット
   │    ├─ compare_sp.png・・・比較ページのSP版スクリーンショット
-  │    └─ diff.png・・・比較結果の画像
+  │    ├─ diff_pc.png・・・比較結果の画像：PC版
+  │    └─ diff_sp.png・・・比較結果の画像：SP版
   │
   ├─ tasks/
   │    └─ diff.mjs・・・playwrightでスクリーンショットを生成する処理
