@@ -1,19 +1,20 @@
 #!/bin/zsh
 
-#入力プロンプトを表示
+#元ページのURLを入力するプロンプトを表示
 echo -n original: 
-#入力を受付、その入力を「str」に代入
+#入力を「str」に代入
 read str 
 
+#比較ページのURLを入力するプロンプトを表示
 echo -n compareWith: 
+#入力を「str2」に代入
 read str2 
 
-# echo "${str%/*}/diff.png"
-echo "$(cd $(dirname $0);pwd)/images/a.png"
-
+#環境変数にURLを渡してnode実行、スクリーンショットを生成する
 ORIGINAL="${str}" COMPARE="${str2}" node ./tasks/diff.mjs
 
+#画像比較を実行 PC用
 compare $(cd $(dirname $0);pwd)/images/a.png $(cd $(dirname $0);pwd)/images/b.png $(cd $(dirname $0);pwd)/images/pc.png
 
+#画像比較を実行 SP用
 compare $(cd $(dirname $0);pwd)/images/a_sp.png $(cd $(dirname $0);pwd)/images/b_sp.png $(cd $(dirname $0);pwd)/images/sp.png
-
