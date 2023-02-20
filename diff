@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+#入力プロンプトを表示
+echo -n original: 
+#入力を受付、その入力を「str」に代入
+read str 
+
+echo -n compareWith: 
+read str2 
+
+# echo "${str%/*}/diff.png"
+echo "$(cd $(dirname $0);pwd)/images/a.png"
+
+ORIGINAL="${str}" COMPARE="${str2}" node ./tasks/diff.mjs
+
+compare $(cd $(dirname $0);pwd)/images/a.png $(cd $(dirname $0);pwd)/images/b.png $(cd $(dirname $0);pwd)/images/pc.png
+
+compare $(cd $(dirname $0);pwd)/images/a_sp.png $(cd $(dirname $0);pwd)/images/b_sp.png $(cd $(dirname $0);pwd)/images/sp.png
+
