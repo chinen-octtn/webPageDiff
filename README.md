@@ -2,6 +2,12 @@
 
 ## 準備
 
+このリポジトリをクローンします。
+
+```
+git clone https://github.com/chinen-octtn/webPageDiff.git
+```
+
 ### 1. imageMagic をインストールする
 
 差分抽出の処理をするために [ImageMagick](https://imagemagick.org/) を使用する
@@ -15,6 +21,12 @@ brew install imagemagick
 スクリーンショットを撮るためのライブラリに [playwright](https://github.com/microsoft/playwright) を使用する
 
 （ヘッドレスブラウザを起動してスクリーンショットを作成できる）
+
+このリポジトリの場所へ移動（/PATH/TO/ の部分は各自の環境に合わせること）
+
+```
+cd /PATH/TO/webPageDiff
+```
 
 ```
 npm install
