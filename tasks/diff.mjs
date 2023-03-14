@@ -16,10 +16,9 @@ const webPath = [
 ];
 
 (async () => {
-  console.log("Creating PC screenshots...");
-
   // PC用のスクリーンショット生成
-  for (const webPage of webPath) {
+  console.log("Creating PC screenshots...");
+  webPath.forEach(async (webPage) => {
     const browser = await playwright["chromium"].launch();
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -29,12 +28,12 @@ const webPath = [
       fullPage: true,
     });
     await browser.close();
-  }
+  });
   console.log("Finished PC screenshots!!!");
 
   // SP用のスクリーンショット生成
   console.log("Creating SP screenshots...");
-  for (const webPage of webPath) {
+  webPath.forEach(async (webPage) => {
     const browser = await playwright["chromium"].launch();
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -48,7 +47,7 @@ const webPath = [
       fullPage: true,
     });
     await browser.close();
-  }
+  });
   console.log("Finished SP screenshots!!!");
 
   // 完了メッセージ
